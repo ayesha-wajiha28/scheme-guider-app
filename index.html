@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized SchemeGuider</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">🏛️ Personalized <span>SchemeGuider</span></div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#profile">Profile</a>
+      <a href="#results">Results</a>
+      <a href="#">Help</a>
+      <a href="#">About</a>
+    </div>
+  </nav>
+
+  <section id="home" class="hero-section">
+    <h1>Government Schemes<br><span class="highlight-text">Made For You.</span></h1>
+    <p class="hero-subtext">
+      "A Personalized platform that helps citizens easily discover government scholarships, financial assistance, and welfare programs based on their eligibility."
+    </p>
+    
+    <a href="#profile" class="btn-hero">Explore Eligible Schemes →</a>
+
+    <div class="steps-container">
+      <div class="step-box">
+        <div class="step-icon">👤</div>
+        <h4>Personal Details</h4>
+        <p>Tell about yourself</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step-box">
+        <div class="step-icon">✔️</div>
+        <h4>Eligibility Check</h4>
+        <p>Check your eligibility</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step-box">
+        <div class="step-icon">🎓</div>
+        <h4>Matching Schemes</h4>
+        <p>Find suitable Schemes</p>
+      </div>
+    </div>
+
+    <h3 class="category-title">Popular schemes categories</h3>
+    <div class="category-grid">
+      <div class="category-card">
+        <span class="cat-icon">🎓</span>
+        <div>
+          <h4>Education</h4>
+          <p>Scholarships & Student benefits</p>
+        </div>
+      </div>
+      <div class="category-card">
+        <span class="cat-icon">🚜</span>
+        <div>
+          <h4>Farmers</h4>
+          <p>Agriculture & Farmer support</p>
+        </div>
+      </div>
+      <div class="category-card">
+        <span class="cat-icon">👩</span>
+        <div>
+          <h4>Womens</h4>
+          <p>Women welfare schemes</p>
+        </div>
+      </div>
+      <div class="category-card">
+        <span class="cat-icon">🤝</span>
+        <div>
+          <h4>Financial support</h4>
+          <p>Financial assistance programs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="profile" class="form-section">
+    <div class="form-container">
+      <div class="form-header">
+        <small class="step-tag">STEP 01 . PROFILE</small>
+        <h2>Tell Us About You</h2>
+        <p>We use your information to identify potentially relevant schemes.</p>
+      </div>
+
+      <form id="schemeForm">
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" id="age" placeholder="Example: 20" required>
+        </div>
+
+        <div class="form-group">
+          <label>State</label>
+          <select id="state">
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="All">All India</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Occupation</label>
+          <select id="occupation">
+            <option value="All">Select Occupation</option>
+            <option value="Student">Student</option>
+            <option value="Differently Abled">Differently Abled</option>
+            <option value="Unemployed">Unemployed</option>
+            <option value="Farmer">Farmer</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Annual Family Income</label>
+          <input type="number" id="income" placeholder="Example: 200000">
+        </div>
+
+        <div class="form-group">
+          <label>Education</label>
+          <select id="education">
+            <option value="School">School</option>
+            <option value="College">College</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Residence</label>
+          <select id="residence">
+            <option value="Rural">Rural</option>
+            <option value="Urban">Urban</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Main Requirement</label>
+          <select id="requirement">
+            <option value="Education">Education</option>
+            <option value="Financial Support">Financial Support</option>
+            <option value="Maintenance">Maintenance</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Gender</label>
+          <select id="gender">
+            <option value="All">Select Gender</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+          </select>
+        </div>
+
+        <div class="security-note">
+          🔒 Your information is used only to personalize scheme recommendations.
+        </div>
+
+        <button type="submit" class="btn-submit">Find My Schemes →</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="results" class="form-section" style="display: none;">
+    <div class="form-container">
+      <div class="form-header">
+        <small class="step-tag">STEP 02 . RECOMMENDATIONS</small>
+        <h2>Schemes For You</h2>
+        <p>Personalized recommendations based on your profile.</p>
+      </div>
+
+      <div class="match-banner">
+        <div>
+          <h3>Your Personalized Results Are Ready</h3>
+          <p>These schemes are selected according to the information you provided.</p>
+        </div>
+        <span class="match-badge">Eligibility Match</span>
+      </div>
+
+      <div id="schemesList"></div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('schemeForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const userProfile = {
+        age: parseInt(document.getElementById('age').value),
+        gender: document.getElementById('gender').value,
+        occupation: document.getElementById('occupation').value
+      };
+
+      try {
+        const response = await fetch('/api/match-schemes', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(userProfile)
+        });
+
+        const result = await response.json();
+        const schemesList = document.getElementById('schemesList');
+        schemesList.innerHTML = '';
+
+        if (result.data && result.data.length > 0) {
+          result.data.forEach(scheme => {
+            schemesList.innerHTML += `
+              <div class="scheme-card">
+                <span class="govt-tag">${scheme.government} Govt</span>
+                <h3 class="scheme-title">${scheme.name}</h3>
+                <p class="scheme-benefit"><strong>Benefit:</strong> ${scheme.benefit}</p>
+                <div class="why-box">
+                  🎯 <strong>Why this may suit you?</strong><br>
+                  Matched based on your age, gender, and occupation profile.
+                </div>
+                <div class="card-buttons">
+                  <a href="${scheme.url}" target="_blank" class="btn-details">View Details</a>
+                  <a href="${scheme.url}" target="_blank" class="btn-apply">Apply</a>
+                </div>
+              </div>
+            `;
+          });
+        } else {
+          schemesList.innerHTML = '<p style="text-align:center;">No matching schemes found.</p>';
+        }
+
+        document.getElementById('results').style.display = 'block';
+        window.location.hash = '#results';
+      } catch (err) {
+        alert('Server Error! Make sure node server.js is running.');
+      }
+    });
+  </script>
+
+</body>
+</html>
