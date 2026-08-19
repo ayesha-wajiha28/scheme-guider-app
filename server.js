@@ -1,8 +1,10 @@
 const express = require('express');
+const path = require('path');
+const app = express();
 const cors = require('cors');
 const schemes = require('./schemes.json');
 
-const app = express();
+app.use(express.static(__dirname));
 app.use(cors());
 app.use(express.json());
 
