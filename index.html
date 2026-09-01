@@ -3,8 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scheme Guide App</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Government Scheme Finder</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f7f6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    button#submitBtn {
+      width: 100%;
+      padding: 12px;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    button#submitBtn:hover {
+      background-color: #219150;
+    }
+
+    /* Grid Layout for Scheme Cards */
+    .schemes-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .scheme-card {
+      background: #ffffff;
+      border: 1px solid #e1e8ed;
+      border-top: 4px solid #27ae60;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .scheme-title {
+      font-size: 18px;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .scheme-benefit {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 12px;
+    }
+
+    .why-box {
+      background-color: #eef9f1;
+      border-left: 3px solid #27ae60;
+      padding: 8px 12px;
+      font-size: 13px;
+      color: #2d6a4f;
+      margin-bottom: 15px;
+      border-radius: 4px;
+    }
+
+    .card-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-details, .btn-apply {
+      flex: 1;
+      text-align: center;
+      padding: 8px 12px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .btn-details {
+      background-color: #e0e0e0;
+      color: #333;
+    }
+
+    .btn-apply {
+      background-color: #27ae60;
+      color: white;
+    }
+
+    .btn-details:hover, .btn-apply:hover {
+      opacity: 0.85;
+    }
+
+    .no-data {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: #777;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
 
@@ -44,7 +187,7 @@
     </form>
 
     <div id="schemesList" class="schemes-container">
-      <!-- Matched scheme cards will appear here -->
+      <!-- Cards will appear here -->
     </div>
   </div>
 
@@ -72,21 +215,25 @@
         if (result.data && result.data.length > 0) {
           result.data.forEach(scheme => {
             
-            // 404 எர்ரரைத் தவிர்க்க Google Search URL உருவாக்கம்
-            const searchQuery = encodeURIComponent(scheme.name + " Tamil Nadu Government Scheme");
-            const finalUrl = `https://www.google.com/search?q=${searchQuery}`;
+            // நேரடி URL சரிபார்த்தல் (Fallback -> tn.gov.in)
+            let directUrl = scheme.url ? scheme.url.trim() : 'https://www.tn.gov.in';
+            if (!directUrl.startsWith('http://') && !directUrl.startsWith('https://')) {
+              directUrl = 'https://' + directUrl;
+            }
 
             schemesList.innerHTML += `
               <div class="scheme-card">
-                <h3 class="scheme-title">${scheme.name}</h3>
-                <p class="scheme-benefit"><strong>Benefit: </strong>${scheme.benefit}</p>
-                <div class="why-box">
-                  🎯 <strong>Why this may suit you?</strong><br>
-                  Matched based on your age, gender, and occupation profile.
+                <div>
+                  <h3 class="scheme-title">${scheme.name}</h3>
+                  <p class="scheme-benefit"><strong>Benefit: </strong>${scheme.benefit}</p>
+                  <div class="why-box">
+                    🎯 <strong>Why this may suit you?</strong><br>
+                    Matched based on your age, gender, and occupation profile.
+                  </div>
                 </div>
                 <div class="card-buttons">
-                  <a href="${finalUrl}" target="_blank" rel="noopener noreferrer" class="btn-details">View Details</a>
-                  <a href="${finalUrl}" target="_blank" rel="noopener noreferrer" class="btn-apply">Apply</a>
+                  <a href="${directUrl}" target="_blank" rel="noopener noreferrer" class="btn-details">View Details</a>
+                  <a href="${directUrl}" target="_blank" rel="noopener noreferrer" class="btn-apply">Apply</a>
                 </div>
               </div>
             `;
@@ -96,7 +243,7 @@
         }
       } catch (error) {
         console.error('Error fetching schemes:', error);
-        alert('Something went wrong. Please check if server is running!');
+        alert('Something went wrong. Please try again!');
       }
     });
   </script>

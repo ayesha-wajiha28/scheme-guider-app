@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
   {
     "id": "TN001",
@@ -219,4 +220,227 @@
     "benefit": "₹12,000/year scholarship (Class 9 to 12)",
     "url": "https://scholarships.gov.in/"
   }
+=======
+[
+  {
+    "id": "TN001",
+    "name": "Maintenance Allowance to Intellectually Disabled Persons",
+    "government": "Tamil Nadu",
+    "min_age": 18,
+    "max_age": 100,
+    "gender": "All",
+    "occupation": "Differently Abled",
+    "benefit": "₹1,500/month",
+    "url": "https://www.scd.tn.gov.in/Mintantance_allowance.php"
+  },
+  {
+    "id": "TN002",
+    "name": "Maintenance Allowance to Severely Affected Persons",
+    "government": "Tamil Nadu",
+    "min_age": 18,
+    "max_age": 100,
+    "gender": "All",
+    "occupation": "Differently Abled",
+    "benefit": "₹1,500/month",
+    "url": "https://www.scd.tn.gov.in/Mintantance_allowance.php"
+  },
+  {
+    "id": "TN003",
+    "name": "Maintenance Allowance for Muscular Dystrophy",
+    "government": "Tamil Nadu",
+    "min_age": 18,
+    "max_age": 100,
+    "gender": "All",
+    "occupation": "Differently Abled",
+    "benefit": "₹1,500/month",
+    "url": "https://www.scd.tn.gov.in/Mintantance_allowance.php"
+  },
+  {
+    "id": "TN004",
+    "name": "Maintenance Allowance for Leprosy Affected Persons",
+    "government": "Tamil Nadu",
+    "min_age": 18,
+    "max_age": 100,
+    "gender": "All",
+    "occupation": "Differently Abled",
+    "benefit": "₹1,500/month",
+    "url": "https://www.scd.tn.gov.in/Mintantance_allowance.php"
+  },
+  {
+    "id": "TN005",
+    "name": "Unemployment Allowance for Differently Abled Persons",
+    "government": "Tamil Nadu",
+    "min_age": 18,
+    "max_age": 100,
+    "gender": "All",
+    "occupation": "Differently Abled",
+    "benefit": "₹600–₹1,000/month depending on education",
+    "url": "https://www.scd.tn.gov.in/social_sec_schemes.php"
+  },
+  {
+    "id": "TN006",
+    "name": "Personal Assistance Allowance for High Support Needs",
+    "government": "Tamil Nadu",
+    "min_age": 18,
+    "max_age": 100,
+    "gender": "All",
+    "occupation": "Differently Abled",
+    "benefit": "₹1,500/month",
+    "url": "https://www.scd.tn.gov.in/social_sec_schemes.php"
+  },
+  {
+    "id": "TN007",
+    "name": "Personal Accident Relief for Differently Abled Persons",
+    "government": "Tamil Nadu",
+    "min_age": 18,
+    "max_age": 100,
+    "gender": "All",
+    "occupation": "Differently Abled",
+    "benefit": "Up to ₹1,00,000 relief",
+    "url": "https://www.scd.tn.gov.in/social_sec_schemes.php"
+  },
+  {
+    "id": "TN008",
+    "name": "Scholarship to Son/Daughter of Differently Abled Persons",
+    "government": "Tamil Nadu",
+    "min_age": 12,
+    "max_age": 100,
+    "gender": "All",
+    "occupation": "Student",
+    "benefit": "Scholarship for school & college education",
+    "url": "https://www.scd.tn.gov.in/educational_schemes.php"
+  },
+  {
+    "id": "TN009",
+    "name": "Rural Girls' Incentive Scheme",
+    "government": "Tamil Nadu",
+    "min_age": 8,
+    "max_age": 100,
+    "gender": "Female",
+    "occupation": "Student",
+    "benefit": "Incentive to retain rural girl students in school",
+    "url": "https://www.tn.gov.in/scheme/data_view/6880"
+  },
+  {
+    "id": "TN010",
+    "name": "Supply of Motorized Sewing Machines to Minorities",
+    "government": "Tamil Nadu",
+    "min_age": 20,
+    "max_age": 45,
+    "gender": "All",
+    "occupation": "All",
+    "benefit": "Free motorized sewing machine",
+    "url": "https://bcmbcmw.tn.gov.in/welfare_schemes.htm"
+  },
+  {
+    "id": "TN011",
+    "name": "Jerusalem Pilgrimage Financial Assistance",
+    "government": "Tamil Nadu",
+    "min_age": 18,
+    "max_age": 100,
+    "gender": "All",
+    "occupation": "All",
+    "benefit": "Financial grant for pilgrimage",
+    "url": "https://bcmbcmw.tn.gov.in/welfare_schemes.htm"
+  },
+  {
+    "id": "TN012",
+    "name": "Overseas Scholarship for Minority Students",
+    "government": "Tamil Nadu",
+    "min_age": 18,
+    "max_age": 35,
+    "gender": "All",
+    "occupation": "Student",
+    "benefit": "Financial support for higher studies abroad",
+    "url": "https://bcmbcmw.tn.gov.in/welfare_schemes.htm"
+  },
+  {
+    "id": "TN013",
+    "name": "Financial Assistance for Buddhist/Jain/Sikh Pilgrimage",
+    "government": "Tamil Nadu",
+    "min_age": 18,
+    "max_age": 100,
+    "gender": "All",
+    "occupation": "All",
+    "benefit": "Grant for visiting holy places in India",
+    "url": "https://bcmbcmw.tn.gov.in/welfare_schemes.htm"
+  },
+  {
+    "id": "TN014",
+    "name": "Chief Minister Solar Powered Green House Scheme",
+    "government": "Tamil Nadu",
+    "min_age": 18,
+    "max_age": 100,
+    "gender": "All",
+    "occupation": "All",
+    "benefit": "Solar powered housing grant for rural poor",
+    "url": "https://www.tnrd.tn.gov.in/schemes/cm_greenhouse.html"
+  },
+  {
+    "id": "TN015",
+    "name": "Tamil Nadu Village Habitation Improvement Scheme (THAI)",
+    "government": "Tamil Nadu",
+    "min_age": 0,
+    "max_age": 100,
+    "gender": "All",
+    "occupation": "All",
+    "benefit": "Infrastructure improvement in rural habitations",
+    "url": "https://www.tnrd.tn.gov.in/schemes/thai_scheme.html"
+  },
+  {
+    "id": "TN016",
+    "name": "Self Sufficiency Scheme (SSS)",
+    "government": "Tamil Nadu",
+    "min_age": 0,
+    "max_age": 100,
+    "gender": "All",
+    "occupation": "All",
+    "benefit": "Public-community partnership infrastructure funding",
+    "url": "https://www.tnrd.tn.gov.in/schemes/sss.html"
+  },
+  {
+    "id": "TN017",
+    "name": "Rural Infrastructure Scheme (RIS)",
+    "government": "Tamil Nadu",
+    "min_age": 0,
+    "max_age": 100,
+    "gender": "All",
+    "occupation": "All",
+    "benefit": "Upgradation of basic village infrastructure",
+    "url": "https://www.tnrd.tn.gov.in/schemes/ris.html"
+  },
+  {
+    "id": "IN001",
+    "name": "National Overseas Scholarship for Students with Disabilities",
+    "government": "Central",
+    "min_age": 18,
+    "max_age": 35,
+    "gender": "All",
+    "occupation": "Student",
+    "benefit": "Scholarship for Master's/Ph.D. abroad",
+    "url": "https://disabilityaffairs.gov.in/content/page/nos.php"
+  },
+  {
+    "id": "IN002",
+    "name": "PM Vishwakarma",
+    "government": "Central",
+    "min_age": 18,
+    "max_age": 100,
+    "gender": "All",
+    "occupation": "All",
+    "benefit": "Collateral-free credit, skill training & toolkit incentive",
+    "url": "https://pmvishwakarma.gov.in/"
+  },
+  {
+    "id": "IN003",
+    "name": "National Means-cum-Merit Scholarship Scheme (NMMSS)",
+    "government": "Central",
+    "min_age": 12,
+    "max_age": 18,
+    "gender": "All",
+    "occupation": "Student",
+    "benefit": "₹12,000/year scholarship (Class 9 to 12)",
+    "url": "https://scholarships.gov.in/"
+  }
+>>>>>>> 24ada03db5a4cd7a6047633863971b6c131d644c
 ]
